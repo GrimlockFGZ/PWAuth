@@ -1,0 +1,26 @@
+
+html, body{ height:100%; }
+body{ margin:0;padding:0; background:#D84B4B; text-align:center; font:12px arial; }
+body::after{ content:''; height:100%; display:inline-block; vertical-align:middle; }
+p{ color:#AAA; padding-top:20px; }
+a{ color:#D84B4B; text-decoration:none; }
+h1{ color:#FFF; text-transform:uppercase; word-spacing:5px; letter-spacing:-1px; }
+form{ display:inline-block; vertical-align:middle; }
+.labeled{ margin:15px 0; line-height:2.8;
+    &::after{ content:''; display:table; clear:both; }
+    /* stlye the inputs */
+    input{ float:right; margin-left:10px; width:300px; padding:10px; font-size:inherit; border:1px solid #CCC; border-radius:5px; box-shadow:0 0 0 3px rgba(0,0,0,.05) inset;
+        &:focus{ border-color:#AAA; }
+    }
+}
+.login-button{margin-top:10px;}
+@supports(pointer-events:none) {
+    .labeled{ position:relative; font-size:1.3em;
+        label{ position:absolute; left:10px; top:0; overflow:hidden; opacity:0.4; pointer-events:none; transition:.3s cubic-bezier(.45,.3,.45,1.33); }
+        input{ margin:0;
+            &:focus, &:valid{
+            & + label{ text-indent:-170px; }
+            }
+        }
+    }
+}

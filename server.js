@@ -9,7 +9,7 @@ const connection = mysql.createConnection({
     password: 'your_password',
     database: 'your_database'
 });
-
+app.use(express.static('public'));
 app.use(express.json());
 
 connection.connect(error => {
