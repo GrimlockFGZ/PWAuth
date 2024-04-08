@@ -1,26 +1,169 @@
-
-html, body{ height:100%; }
-body{ margin:0;padding:0; background:#D84B4B; text-align:center; font:12px arial; }
-body::after{ content:''; height:100%; display:inline-block; vertical-align:middle; }
-p{ color:#AAA; padding-top:20px; }
-a{ color:#D84B4B; text-decoration:none; }
-h1{ color:#FFF; text-transform:uppercase; word-spacing:5px; letter-spacing:-1px; }
-form{ display:inline-block; vertical-align:middle; }
-.labeled{ margin:15px 0; line-height:2.8;
-    &::after{ content:''; display:table; clear:both; }
-    /* stlye the inputs */
-    input{ float:right; margin-left:10px; width:300px; padding:10px; font-size:inherit; border:1px solid #CCC; border-radius:5px; box-shadow:0 0 0 3px rgba(0,0,0,.05) inset;
-        &:focus{ border-color:#AAA; }
-    }
+html, body {
+  height: 100%;
 }
-.login-button{margin-top:10px;}
-@supports(pointer-events:none) {
-    .labeled{ position:relative; font-size:1.3em;
-        label{ position:absolute; left:10px; top:0; overflow:hidden; opacity:0.4; pointer-events:none; transition:.3s cubic-bezier(.45,.3,.45,1.33); }
-        input{ margin:0;
-            &:focus, &:valid{
-            & + label{ text-indent:-170px; }
-            }
-        }
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #D84B4B;
+  text-align: center;
+  font: 12px arial;
+}
+
+body::after {
+  content: '';
+  height: 100%;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+
+p {
+  color: #AAA;
+  padding-top: 20px;
+}
+
+a {
+  color: #D84B4B;
+  text-decoration: none;
+}
+
+h1 {
+  color: #FFF;
+  text-transform: uppercase;
+  word-spacing: 5px;
+  letter-spacing: -1px;
+}
+
+form {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.labeled {
+  margin: 15px 0;
+  line-height: 2.8;
+}
+
+.labeled::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.labeled input {
+  float: right;
+  margin-left: 10px;
+  width: 300px;
+  padding: 10px;
+  font-size: inherit;
+  border: 1px solid #CCC;
+  border-radius: 5px;
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, .05) inset;
+}
+
+.labeled input:focus {
+  border-color: #AAA;
+}
+
+.login-button {
+  width: 25%;
+  font-size:15px;
+  height: 40px;
+  margin-top: 10px;
+  border-radius: 8px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #D84B4B;
+
+}
+
+@supports (pointer-events: none) {
+  .labeled {
+    position: relative;
+    font-size: 1.3em;
+  }
+
+  .labeled label {
+    position: absolute;
+    left: 10px;
+    top: 0;
+    overflow: hidden;
+    opacity: 0.4;
+    pointer-events: none;
+    transition: .3s cubic-bezier(.45, .3, .45, 1.33);
+  }
+
+  .labeled input {
+    margin: 0;
+  }
+
+  .labeled input:focus, .labeled input:valid {
+    & + label {
+      text-indent: -170px;
     }
+  }
+}
+
+.forms-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  gap: 20px; /* Adjust the space between the forms */
+  flex-wrap: wrap; /* Allows the forms to wrap to the next line if needed */
+}
+
+/* Ensure the toggle buttons are centered underneath the forms */
+.toggle-buttons {
+  display: flex;
+  justify-content: center;
+  width: 100%; /* Ensure it spans the full width */
+  margin-top: 20px; /* Adjust as needed */
+}
+
+
+.toggle-buttons button {
+  margin-bottom: 60px; /* Adjust spacing between buttons */
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#SignupForm {
+  display: none;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; /* Full viewport height */
+}
+
+.forms-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* Adjust the space between the forms */
+  flex-wrap: wrap; /* Allows the forms to wrap to the next line if needed */
+  width: 100%; /* Ensure it spans the full width */
+}
+
+.toggle-buttons {
+  display: flex;
+  justify-content: center;
+  width: 100%; /* Ensure it spans the full width */
+  margin-top: 10px; /* Reduced from 20px to 10px */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+html {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
