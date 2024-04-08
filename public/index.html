@@ -2,34 +2,27 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Login & Registration Form</title>
+    <title>Login Page</title>
     <link rel="stylesheet" href="Styles.css">
 </head>
 <body>
-<div class="container">
-    <div class="message signup">
-        <div class="btn-wrapper">
-            <button class="button" id="signup">Sign Up</button>
-            <button class="button" id="login"> Login</button>
-        </div>
+<h1>Login Form</h1>
+<form id="loginForm">
+    <div class='labeled'>
+        <input type="text" id="username" required placeholder ="Enter your name"/>
+
     </div>
-    <div class="form form--signup">
-        <div class="form--heading">Welcome! Sign Up</div>
-        <form autocomplete="off">
-            <input type="text" placeholder="Name">
-            <input type="password" placeholder="Password">
-            <button class="button">Sign Up</button>
-        </form>
+    <div class='labeled'>
+        <input type="password" id="password"
+               required
+               placeholder="Enter your password"
+               pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+               title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" />
+
     </div>
-    <div class="form form--login">
-        <div class="form--heading">Welcome back!</div>
-        <form autocomplete="off">
-            <input type="text" placeholder="Name">
-            <input type="password" placeholder="Password">
-            <button class="button">Login</button>
-        </form>
-    </div>
-</div>
-<script src="server.js"></script>
+
+    <button class="btn btn-primary btn-block login-button" type="submit"><i class="fa fa-sign-in"></i> Login</button>
+</form>
+<script src="login.js"></script>
 </body>
 </html>
